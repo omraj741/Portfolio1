@@ -1,3 +1,123 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom gradient animations */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes neon-pulse {
+  0%, 100% { filter: brightness(100%) blur(0px); }
+  50% { filter: brightness(150%) blur(1px); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Glow effects */
+.glow {
+  box-shadow: 0 0 15px #FF0080,
+              0 0 30px #FF0080,
+              0 0 45px #FF0080;
+  animation: neon-pulse 2s ease-in-out infinite;
+}
+
+.glow-text {
+  text-shadow: 0 0 10px #FF0080,
+               0 0 20px #FF0080,
+               0 0 30px #FF0080;
+  animation: neon-pulse 2s ease-in-out infinite;
+}
+
+.glow-border {
+  border: 2px solid #FF0080;
+  box-shadow: 0 0 10px #FF0080,
+              inset 0 0 10px #FF0080;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+  box-shadow: inset 0 0 5px #FF0080;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FF0080;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #FF0080;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7928CA;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(255, 0, 128, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 0, 128, 0.2);
+}
+
+/* Hover effects */
+.hover-glow {
+  transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px #FF0080,
+              0 0 40px #FF0080;
+  transform: translateY(-5px);
+}
+
+/* Grid background */
+.grid-bg {
+  background-image: linear-gradient(rgba(255, 0, 128, 0.1) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 0, 128, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: center center;
+}
+
+/* Custom underline animation */
+.animated-underline {
+  position: relative;
+}
+
+.animated-underline::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: #FF0080;
+  box-shadow: 0 0 10px #FF0080;
+  transition: width 0.3s ease;
+}
+
+.animated-underline:hover::after {
+  width: 100%;
+}
