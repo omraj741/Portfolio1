@@ -30,15 +30,9 @@ const Timeline: React.FC<TimelineProps> = ({ experiences }) => {
           <motion.div
             ref={ref}
             key={index}
-            initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50, y: 50 }}
-            animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
-            transition={{ 
-              duration: 0.8,
-              delay: index * 0.2,
-              type: "spring",
-              stiffness: 100,
-              damping: 12
-            }}
+            initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.5, delay: index * 0.2 }}
             className={`relative flex items-center mb-12 ${
               index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
             }`}
@@ -55,25 +49,31 @@ const Timeline: React.FC<TimelineProps> = ({ experiences }) => {
             <div className={`ml-12 md:ml-0 md:w-1/2 ${
               index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'
             }`}>
-              <motion.div 
-                whileHover={{ scale: 1.02 }}
-                className="glass p-6 rounded-lg shadow-neon hover:shadow-neon-xl hover-glow transition-all duration-500"
-              >
-                <div className="flex items-center mb-2 text-[#FF0080]">
-                  <Calendar size={16} className="mr-2 animate-pulse-slow" />
-                  <span className="glow-text">{experience.period}</span>
+              <div className="flip-card">
+                <div className="flip-card-inner">
+                  {/* Front of card */}
+                  <div className="flip-card-front glass p-6 rounded-lg shadow-neon hover:shadow-neon-xl transition-all duration-500">
+                    <div className="flex items-center mb-2 text-[#FF0080]">
+                      <Calendar size={16} className="mr-2 animate-pulse-slow" />
+                      <span className="glow-text">{experience.period}</span>
+                    </div>
+                    <h3 className="text-xl font-bold mb-1 text-[#FF0080] glow-text animated-underline">
+                      {experience.title}
+                    </h3>
+                    <h4 className="text-gray-300 mb-3 flex items-center">
+                      <ChevronRight className="w-4 h-4 text-[#FF0080] mr-1" />
+                      {experience.company}
+                    </h4>
+                  </div>
+
+                  {/* Back of card */}
+                  <div className="flip-card-back glass p-6 rounded-lg shadow-neon hover:shadow-neon-xl transition-all duration-500">
+                    <p className="text-gray-300 flex items-center justify-center h-full text-center">
+                      {experience.description}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold mb-1 text-[#FF0080] glow-text animated-underline">
-                  {experience.title}
-                </h3>
-                <h4 className="text-gray-300 mb-3 flex items-center">
-                  <ChevronRight className="w-4 h-4 text-[#FF0080] mr-1" />
-                  {experience.company}
-                </h4>
-                <p className="text-gray-400 hover:text-gray-300 transition-colors duration-300">
-                  {experience.description}
-                </p>
-              </motion.div>
+              </div>
             </div>
           </motion.div>
         );

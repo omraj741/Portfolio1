@@ -34,17 +34,17 @@ function App() {
     {
       title: "Internship Management System",
       description: "Built a robust platform using Maven & Spring Boot to streamline internship processes and management.",
-      technologies: ["Maven", "Spring Boot", "Java"]
+      technologies: ["Maven", "Spring Boot", "Java", "MySQL", "JSP", "CSS"]
     },
     {
-      title: "E-commerce Platform",
-      description: "Created a full-stack e-commerce platform with user authentication, product management, and payment integration.",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"]
+      title: "Static Web Site",
+      description: "Static Web Site like Stopwatch, Tic Tac Toe, Weather Forecasting.",
+      technologies: ["HTML", "javascript", "CSS"]
     },
     {
-      title: "AI Image Generation App",
-      description: "Developed an AI-powered image generation application using OpenAI's DALL-E API and modern web technologies.",
-      technologies: ["Next.js", "OpenAI API", "Tailwind CSS"]
+      title: "Face Recognition in AWS",
+      description: "I have developed a face recognition system to detect a person's image based on the data present in the database.",
+      technologies: ["S3 Bucket", "Lambda", "AWS Rekognition", "DynamoDB", "API Gateway", "React Frontend"]
     }
   ];
 
@@ -52,25 +52,25 @@ function App() {
     {
       platform: "GeeksforGeeks",
       username: "omraj741",
-      solved: "50+ Problems",
-      url: "https://www.geeksforgeeks.org/user/omraj741/"
+      // solved: "61+ Problems",
+      url: "https://geeksforgeeks.org/user/omraj741"
     },
     {
       platform: "CodeChef",
       username: "klu_2200039004",
-      rating: "1★",
+      // rating: "1★",
       url: "https://www.codechef.com/users/klu_2200039004"
     },
     {
       platform: "Codeforces",
       username: "rajom741",
-      rating: "Specialist",
+      // rating: "",
       url: "https://codeforces.com/profile/rajom741"
     },
     {
       platform: "LeetCode",
       username: "klu_2200039004",
-      solved: "150+ Problems",
+      // solved: "10+ Problems",
       url: "https://leetcode.com/u/klu_2200039004/"
     }
   ];
@@ -119,7 +119,7 @@ function App() {
                    className="text-[#FF0080] hover:text-[#7928CA] transition-colors duration-300">
                   <Github size={24} />
                 </a>
-                <a href="https://www.linkedin.com/in/om-raj-01b63b227" target="_blank" rel="noopener noreferrer" 
+                <a href="https://linkedin.com/in/om-raj-01b63b227/" target="_blank" rel="noopener noreferrer" 
                    className="text-[#7928CA] hover:text-[#FF0080] transition-colors duration-300">
                   <Linkedin size={24} />
                 </a>
@@ -133,12 +133,13 @@ function App() {
               <img 
                 src="./src/assets/new.jpg"
                 alt="Om Raj"
-                className="w-[500px] h-auto object-cover"
+                className="w-[590px] h-auto object-cover"
               />
             </div>
           </div>
         </div>
       </section>
+
       {/* Coding Profiles Section */}
       <section className="py-24 px-6 md:px-8 border-b border-[#7928CA]/20">
         <motion.div 
@@ -198,13 +199,13 @@ function App() {
             className="bg-gray-900 rounded-lg shadow-xl p-8 hover:shadow-2xl hover:shadow-[#FF0080]/10 transition-all duration-300 border border-[#7928CA]/20"
           >
             <p className="text-gray-300 leading-relaxed mb-8 text-lg">
-              I'm a Computer Science Engineering student at K.L University, Vijayawada (2023-26), with a strong foundation from my Diploma in Computer Science Engineering at Galgotias University (2020-23). I'm passionate about full-stack development, data science, and AI.
+              I'm a Computer Science Engineering student at K.L University, Vijayawada (2023-26), with a strong foundation from my Diploma in Computer Science Engineering at Galgotias University (2020-23). I'm passionate about full-stack development, AWS services and data science.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
-                { title: "Languages", content: "Python, C, JavaScript, SQL, HTML/CSS" },
-                { title: "Frameworks", content: "MERN Stack, Spring Boot" },
-                { title: "Tools", content: "VS Code, Azure, Git, Figma" }
+                { title: "Languages", content: "Python, C, JavaScript, SQL, HTML/CSS, JAVA" },
+                { title: "Frameworks", content: "MERN Stack, Spring Boot, MAVEN" },
+                { title: "Tools", content: "VS Code, Azure, Git, Figma, AWS, Jenkins, Terraform" }
               ].map((item, index) => (
                 <motion.div
                   key={index}
@@ -250,7 +251,7 @@ function App() {
               {
                 title: "Class 10 (CBSE)",
                 institution: "Delhi Public School, Darbhanga",
-                period: "2010-20"
+                period: "2019-20"
               }
             ].map((edu, index) => (
               <motion.div
